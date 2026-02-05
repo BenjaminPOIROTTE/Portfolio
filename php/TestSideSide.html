@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="MainDiv">
+    <div class="LeftDiv">
+      <iframe src="TestLeft.html"></iframe>
+    </div>
+
+    <div class="LeftDiv">
+      <iframe src="TestLeft.html"></iframe>
+    </div>
+
+    <div class="LeftDiv">
+      <iframe src="TestLeft.html"></iframe>
+    </div>
+    <div class="LeftDiv">
+      <iframe src="TestLeft.html"></iframe>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<style>.MainDiv {
+  border: 5px solid red;
+  display: flex;           /* 🔥 */
+  flex-wrap: nowrap;       /* 🔥 pas de retour ligne */
+  overflow-x: auto;        /* 🔥 dépasse l'écran */
+  overflow-y: hidden;
+  width: 100vw;
+}
+
+.LeftDiv {
+  border: 5px solid blue;
+  min-width: 45vw;         /* largeur FIXE par item */
+  height: 500px;
+  flex-shrink: 0;          /* 🔥 empêche le rétrécissement */
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.MainDiv {
+  scroll-behavior: smooth;
+}
+
+</style>

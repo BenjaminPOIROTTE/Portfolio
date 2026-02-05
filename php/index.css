@@ -1,0 +1,102 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+        background-image: url("../Texture/FrontMenu/barre\ wii.svg");
+    cursor: url("../Texture/Cursor/cursorsmall.png"), auto;
+    margin: 0;
+    padding: 0;
+      background-repeat: no-repeat;
+    background-position: bottom center;
+
+background-size: 100% ;
+   
+} 
+
+a, button {
+  cursor: url("../Texture/Cursor/cursorsmallgrabclose.png") 8 8, pointer;
+}
+a:hover, button:hover {
+  cursor: url("../Texture/Cursor/cursorsmallgrab.png") 8 8, pointer;
+}
+.container-channel {
+  margin-top: 15px;
+  margin-left: 120px;
+  margin-right: 120px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: stretch; 
+ size: 80%;
+}
+@media (max-width: 1200px) {
+  .container-channel {
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+}
+
+@media (max-width: 900px) {
+  .container-channel {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+
+.channel-button:hover {
+    cursor: url("../Texture/Cursor/cursorsmallgrab.png") 8 8, pointer;
+
+  filter: brightness(1.1);
+  transition: filter 0.3s;
+}
+.channel-button {
+ border: 3px solid #BBBBBB;
+  border-radius: 64px;
+  position: relative;
+  overflow: hidden;          
+  aspect-ratio: 1.5 / 0.8;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+   background-size:cover
+}
+
+
+
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.06) 0px,
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(255, 255, 255, 0.02) 4px,
+    rgba(255, 255, 255, 0.02) 8px
+  );
+
+  opacity: 0.60;
+}
+
+
+    .splide__slide img {
+  width: 100%;
+  height: auto;
+}
+
+.invisible-container{
+  display: none;
+}
