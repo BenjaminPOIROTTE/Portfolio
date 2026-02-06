@@ -21,8 +21,8 @@ foreach ($folders as $folder) {
             : "Texture/default.jpg";
 
         echo "
-        <a href='$folderPath/index.html' class='channel-link'>
-            <div class='channel-button' style=\"background-image: url('$background');\">
+        <a href='$folderPath/index.html' id='$folder' class='channel-link'>
+            <div class='channel-button' style=\"background-image: url('$background');\" '>
             </div>
         </a>";
     }
