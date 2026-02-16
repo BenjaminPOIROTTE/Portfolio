@@ -49,6 +49,8 @@ a:hover, button:hover {
 }
 
 
+
+
 .channel-button:hover {
     cursor: url("../Texture/Cursor/cursorsmallgrab.png") 8 8, pointer;
 
@@ -92,11 +94,46 @@ body::after {
 }
 
 
-    .splide__slide img {
+.splide__slide img {
   width: 100%;
   height: auto;
+
 }
+
+
+
 
 .invisible-container{
   display: none;
+}
+
+
+
+.channel-screen {
+    position: fixed;
+    inset: 0;
+    background: white;
+    transform: scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    z-index: 9999;
+}
+
+.channel-screen.active {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.channel-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#channel-frame {
+    flex: 1;
+    border: none;
 }

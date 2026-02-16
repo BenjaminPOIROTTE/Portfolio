@@ -8,6 +8,13 @@ const children = document.getElementById("invisible-container").children;
 
 
 
+let resizeTimeout;
+
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(reportWindowSize, 150);
+   
+});
 
 for (let i = 0; i < children.length; i++) {
   const child = children[i];
@@ -15,28 +22,84 @@ for (let i = 0; i < children.length; i++) {
 };
 
 
-document.addEventListener( 'DOMContentLoaded', function () {
-    new Splide( '#image-carousel' ).mount();
-  } );
+reportWindowSize();
+let splide = null;
 
 
 
 
+function reportWindowSize() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    switch (true) {
+     
+        case width > 1200 && height > 800:
+            CreateChannelDiv(12);
+            break;
+
+    
+        case width > 800 && height > 600:
+            CreateChannelDiv(8);
+            break;
+
+  
+        case width <= 800 || height <= 600:
+            CreateChannelDiv(4);
+            break;
+    }
 
 
-CreateChannelDiv(4);
+requestAnimationFrame(() => {
+        initSplide();
+    });
+    
+}
+
+
+function initSplide() {
+    if (splide) {
+        splide.destroy(true); // true = clean DOM
+        splide = null;
+    }
+
+    splide = new Splide('#image-carousel', {
+        type: 'slide',
+        perPage: 1,
+        pagination: true,
+        arrows: true,
+    });
+
+    splide.mount();
+}
+
+function ClearChannelDiv()
+{
+    let splideSlide = document.getElementById("splidelist");
+    while (splideSlide.firstChild) {
+        splideSlide.removeChild(splideSlide.firstChild);
+    }  
+
+    alert("CLEAR CHANNEL DIV");
+     
+
+    CreateChannelDiv(12);
+
+
+
+}
 
 function CreateChannelDiv(NumberTile)
 {    
-    console.log("CREATE CHANNEL DIV");
-
+    const splideSlide = document.getElementById("splidelist");
+    splideSlide.innerHTML = "";
+    ContainerCount = 0;
 
     let ArrayChilds = [];
     let ActualChildsElements = document.getElementById("invisible-container").children;
     Array.from(ActualChildsElements).forEach((child) => {
         if(ArrayChilds.length < NumberTile) {
-            ArrayChilds.push(child);
-            
+        ArrayChilds.push(child.cloneNode(true));            
         }
         if(ArrayChilds.length == NumberTile) {
           CreateSlide(ArrayChilds);
@@ -57,13 +120,6 @@ function CreateChannelDiv(NumberTile)
 
         
         for(let i = ArrayChilds.length; i < NumberTile; i++) {
-            
-
-            
-
-
-
-
             ArrayChilds.push(emptyTile.cloneNode(true));
         }
         CreateSlide(ArrayChilds);
@@ -96,11 +152,16 @@ function CreateSlide(ArrayChilds)
     
     console.log(ArrayChilds);
 
-    ArrayChilds.forEach(element => {
-        ChannelDiv.appendChild(element);
+ArrayChilds.forEach(element => {
+
+    element.addEventListener("click", function(e) {
+        e.preventDefault();
+        openChannel(this.getAttribute("href"));
     });
 
-    
+    ChannelDiv.appendChild(element);
+});
+
 
 }
 
@@ -132,6 +193,22 @@ function CreateButton(ContainerName ,ArrayChilds)
 
 
 
+function openChannel(url) {
+    const screen = document.getElementById("channel-screen");
+    const frame = document.getElementById("channel-frame");
+
+    frame.src = url;
+    screen.classList.add("active");
+}
 
 
 
+function closeChannel() {
+    const screen = document.getElementById("channel-screen");
+    const frame = document.getElementById("channel-frame");
+
+    screen.classList.remove("active");
+    frame.src = "";
+}
+document.getElementById("close-channel")
+        .addEventListener("click", closeChannel);

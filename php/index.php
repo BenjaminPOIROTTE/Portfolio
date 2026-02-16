@@ -28,6 +28,21 @@
 
 
    </div>
+
+
+
+
+
+
+
+<div id="channel-screen" class="channel-screen">
+    <div class="channel-inner">
+        <button id="close-channel">Retour Menu</button>
+        <iframe id="channel-frame"></iframe>
+    </div>
+</div>
+
+
 </body>
 <?php include 'FrontMenu.php'; ?>
 
