@@ -28,9 +28,24 @@ echo "<img src='$imagePath' alt='Channel Image' id='channelImage' class='channel
     <p id="channelText">
 
 <?php 
+
+$backgroundColor = "#ffffff"; 
     if (file_exists($textPath)) {
+        
         $description = file_get_contents($textPath);
+      if (preg_match('/color:\s*(#[a-fA-F0-9]{6})/', $description, $matches)) {
+        $backgroundColor = $matches[1];
+
+        $description = preg_replace('/color:\s*#[a-fA-F0-9]{6}/', '', $description);
+    }
         echo nl2br($description); 
+        echo "<script>
+        
+    document.getElementById('channelDescription').style.backgroundColor = '$backgroundColor';
+        
+        </script>";
+
+
     } else {
         echo "Description non disponible.";
     }
@@ -40,13 +55,11 @@ echo "<img src='$imagePath' alt='Channel Image' id='channelImage' class='channel
     </p>
 </div>
 
-<div class="bottomUI" id="bottomUI">
-    <button id="backButton" class="uiButton">Back</button>
-    <button id="goButton" class="uiButton">GO</button>
-</div>
 
 
 <script>
+
+
   const urlParams = new URLSearchParams(window.location.search);
   const SelectedValue = urlParams.get('selectedchannel');
   console.log(SelectedValue);  

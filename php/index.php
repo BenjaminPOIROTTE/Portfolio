@@ -37,8 +37,14 @@
 
 <div id="channel-screen" class="channel-screen">
     <div class="channel-inner">
-        <button id="close-channel">Retour Menu</button>
+ 
         <iframe id="channel-frame"></iframe>
+            <div class="channel-buttons">
+               <button id="close-channel">Retour Menu</button>
+                <button id="github-btn">Github</button>
+            </div>
+
+            <img id="border-img" class="border-img" src="../Texture/ChannelViewer/test.svg" alt="Channel Image">
     </div>
 </div>
 

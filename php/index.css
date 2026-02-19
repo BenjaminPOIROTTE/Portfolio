@@ -136,4 +136,27 @@ body::after {
 #channel-frame {
     flex: 1;
     border: none;
+
 }
+
+.channel-buttons {
+    height: 10% ;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.border-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background: url("../Texture/ChannelViewer/test.svg") no-repeat center;
+    background-size: 100% 100%;
+      pointer-events: none; 
+  }
+
+  .channel-frame {
+      overflow: hidden;
+  }
