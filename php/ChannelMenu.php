@@ -11,14 +11,18 @@ foreach ($folders as $folder) {
     }
 
     $folderPath = $path . "/" . $folder;
-    $imagePath = $folderPath . "/miniature.jpg";
+    $gifPath = $folderPath . "/miniature.gif";
+    $jpgPath = $folderPath . "/miniature.jpg";
 
     if (is_dir($folderPath)) {
 
-      
-        $background = file_exists($imagePath)
-            ? $imagePath
-            : "Texture/default.jpg";
+       if (file_exists($gifPath)) {
+            $background = $gifPath;
+        } elseif (file_exists($jpgPath)) {
+            $background = $jpgPath;
+        } else {
+            $background = "Texture/WiiNoIcon.png";
+        }
 
         echo "
         <a href='ChannelView.php?selectedchannel=$folder' id='$folder' class='channel-link'>

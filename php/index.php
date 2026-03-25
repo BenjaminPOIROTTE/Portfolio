@@ -2,7 +2,6 @@
 <html lang="en">
 <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
 
-
 <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
 
 <head>
@@ -40,12 +39,20 @@
  
         <iframe id="channel-frame"></iframe>
             <div class="channel-buttons">
-               <button id="close-channel">Retour Menu</button>
-                <button id="github-btn">Github</button>
+                <button  class="wii-btn retourmenu " onclick="closeChannel()" id="close-channel"></button>
+                <button class="wii-btn githubbutton" onclick="githubButtonClicked()" id="github-btn"></button>
+               
             </div>
 
-            <img id="border-img" class="border-img" src="../Texture/ChannelViewer/test.svg" alt="Channel Image">
+            <div class="overlay"></div>
+           
+
     </div>
+     <div class="overlay2"></div>
+     <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
 </div>
 
 

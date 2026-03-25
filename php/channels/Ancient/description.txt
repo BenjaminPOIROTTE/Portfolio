@@ -1,2 +1,6 @@
 color:#b3ffb3
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut euismod diam. Duis lacinia mollis leo, ut pulvinar enim accumsan id. Morbi sed nisl quis magna facilisis vestibulum. Suspendisse potenti. Pellentesque maximus fringilla lectus, eget dictum odio vehicula vel. Sed nec ullamcorper arcu. Maecenas at erat mollis, mattis erat ut, rhoncus erat. Maecenas vel eros vel nibh condimentum malesuada vitae vitae sem. Donec nec dolor nisl. 
+L'Albatros de Tristan da Cunha (Diomedea dabbenena) est une espèce d'oiseaux de mer de la famille des Diomedeidae. Il se reproduit presque exclusivement sur l'île Gough dans le sud de l'océan Atlantique, et est en danger critique d'extinction.
+
+L'Albatros de Tristan da Cunha est une espèce d'assez grande taille, au plumage brun chocolat qui s'éclaircit au fil des années. Il peut être difficile à distinguer des autres espèces du genre Diomedea, notamment de l'Albatros hurleur (Diomedea exulans), un peu plus grand, et de l'Albatros des Antipodes (Diomedea antipodensis).
+
+Anciennement nicheur dans tout l'archipel Tristan da Cunha, il a disparu de l'île principale au XIXe siècle et a drastiquement baissé sur l'île Inaccessible, où on ne compte plus que deux ou trois couples chaque année. L'essentiel de sa population vit sur l'île Gough, où il niche sur des terrains plats et ouverts en altitude. Hors de sa période de reproduction, il survole le sud de l'Atlantique jusqu'aux côtes africaines, et dans une moindre mesure l'océan Indien jusqu'au sud de l'Australie. 

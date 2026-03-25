@@ -80,7 +80,7 @@ function ClearChannelDiv()
         splideSlide.removeChild(splideSlide.firstChild);
     }  
 
-    alert("CLEAR CHANNEL DIV");
+
      
 
     CreateChannelDiv(12);
@@ -150,7 +150,7 @@ function CreateSlide(ArrayChilds)
 
     ContainerCount++;
     
-    console.log(ArrayChilds);
+   
 
 ArrayChilds.forEach(element => {
 
@@ -196,7 +196,7 @@ function CreateButton(ContainerName ,ArrayChilds)
 function openChannel(url) {
     const screen = document.getElementById("channel-screen");
     const frame = document.getElementById("channel-frame");
-
+    channelClicked();
     frame.src = url;
     screen.classList.add("active");
 }

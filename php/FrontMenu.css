@@ -95,40 +95,58 @@ input[type="range"]::-moz-range-thumb {
 
 .WiiBtn {
 
-  margin-left: 3%;
-  margin-bottom: 6.5%;
-  width: 10.42vw; 
-height: 18.52vh;
 
-
-  background-image: url("/Texture/FrontMenu/WiiIcon.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  border-radius: 100%;  
-  border: 6px solid #00bcd4; 
-
-  cursor: pointer;
-}
-.MailBtn{
-    margin-right: 5%;
-  margin-bottom: 6.5%;
   width: 10.42vw; 
   height: 18.52vh;
 
-
-  background-image: url("/Texture/FrontMenu/WiiIcon.png");
+  border-radius: 50%;
+ 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: transparent;
-  border-radius: 100%;  
-  border: 6px solid #00bcd4; 
 
+  border: transparent;
+  background-color: transparent;
   cursor: pointer;
+  z-index: 999999;
 }
 
+.WiiBtn:active {
+  transform: scale(0.95);
+}
+
+.WiiBtn:not(:active) {
+  animation: bounce 0.4s ease;
+}
+
+/* Keyframes */
+@keyframes bounce {
+  0% {
+    transform: scale(0.7);
+
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.GithubBtn {
+    margin-right: 3%;
+  margin-bottom: 6.5%;
+    background-image: url("../Texture/FrontMenu/githubround.webp");
+    z-index: 20;
+
+}
+
+.ContactBtn {
+    margin-left: 3%;
+    margin-bottom: 6.5%;
+    background-image: url("../Texture/FrontMenu/ContactRound.webp");
+     z-index: 20;
+
+}
 
 .time {
      margin-bottom: 1%;
@@ -178,3 +196,16 @@ height: 18.52vh;
   }
 }
 
+.musicBtn{
+
+  
+
+  height: 10vh;
+  width: 10vh;
+  background-image: url("../Texture/FrontMenu/volume_off_100dp_79797B_FILL0_wght400_GRAD0_opsz48.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+}

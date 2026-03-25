@@ -80,7 +80,7 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: -1;
+  z-index: 10;
 
   background: repeating-linear-gradient(
     to bottom,
@@ -110,14 +110,15 @@ body::after {
 
 
 .channel-screen {
+  
     position: fixed;
     inset: 0;
-    background: white;
+    background: rgb(255, 255, 255);
     transform: scale(0.8);
     opacity: 0;
     pointer-events: none;
     transition: all 0.4s ease;
-    z-index: 9999;
+    z-index: 2;
 }
 
 .channel-screen.active {
@@ -131,20 +132,30 @@ body::after {
     height: 100%;
     display: flex;
     flex-direction: column;
+     position: relative;
+
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+
 }
 
 #channel-frame {
     flex: 1;
     border: none;
+    outline: none;
+    
+
 
 }
 
 .channel-buttons {
-    height: 10% ;
+    height: 20% ;
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 10px;
+    background-color: rgb(255, 255, 255);
+
 }
 
 .border-img{
@@ -159,4 +170,54 @@ body::after {
 
   .channel-frame {
       overflow: hidden;
-  }
+
+}
+
+  
+.wii-btn {
+  position: relative;
+  padding: 1vh 1vw;
+
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent;
+
+ border: transparent;
+  
+}
+
+.retourmenu{
+    background-image: url("../Texture/FrontMenu/retourmenu.webp");
+    width: 100%;
+    height: 100%; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 30%;
+}
+.githubbutton{
+    background-image: url("../Texture/FrontMenu/github.webp");
+    width: 100%;
+    height: 100%; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 30%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  box-shadow: inset 0px 0px 60px 50px rgb(0, 0, 0),0 0 0 9999px rgba(0, 0, 0, 1);
+  pointer-events: none; 
+  z-index: 1000;
+
+}
+.overlay2{
+    position: absolute;
+  inset: 0;
+  box-shadow: 0 0 60px 30px rgba(0, 0, 0, 0.9);
+    pointer-events: none; 
+
+    z-index: 2000;
+
+}

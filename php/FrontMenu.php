@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="FrontMenu.css">
-
+<script src="sound.js"></script>
+    <title>Front Menu</title>s
 </head>
 <body>
   
 <div class="footer">
 
- <script src="FrontMusic.js"></script>
 
-  <button class="WiiBtn" onclick="handleButton1()"></button>
+  <button class="WiiBtn ContactBtn" onclick="contactButtonClicked()"></button>
 <div id="volumeControl" class="volume-control">
-  <input type="range" class="vertical" id="volume" name="volume" min="0" max="100" value="0" />
-<audio id="music" src="../Sound/wiiMenu.mp3" loop></audio>
+  <button id="musicBtn" class="musicBtn"  onclick="musicButtonClicked()">
+ 
+  </button>
+  
+
+
 </div>
 
 
@@ -26,7 +30,7 @@
     <div class="date" id="currentDate"></div>
   </div>
 
-  <button class="MailBtn" onclick="handleButton2()"></button>
+  <button class="WiiBtn GithubBtn" onclick="githubButtonClicked()"></button>
 </div>
 
     <script>
