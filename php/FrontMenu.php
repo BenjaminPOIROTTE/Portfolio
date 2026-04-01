@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="FrontMenu.css">
 <script src="sound.js"></script>
-    <title>Front Menu</title>s
+    <title>Front Menu</title>
 </head>
 <body>
   
@@ -13,14 +13,12 @@
 
 
   <button class="WiiBtn ContactBtn" onclick="contactButtonClicked()"></button>
-<div id="volumeControl" class="volume-control">
+ 
   <button id="musicBtn" class="musicBtn"  onclick="musicButtonClicked()">
  
   </button>
   
 
-
-</div>
 
 
 

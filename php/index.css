@@ -4,16 +4,22 @@ html, body {
 }
 
 body {
-        background-image: url("../Texture/FrontMenu/barre\ wii.svg");
+    background-image: url("../Texture/FrontMenu/barre wii.svg");
     cursor: url("../Texture/Cursor/cursorsmall.png"), auto;
     margin: 0;
     padding: 0;
-      background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-position: bottom center;
-
-background-size: 100% ;
+    background-size: 100vw 20vh;
    
 } 
+
+@media (orientation: portrait) {
+  body {
+    background-size: 100vh vh;
+  }
+  
+}
 
 a, button {
   cursor: url("../Texture/Cursor/cursorsmallgrabclose.png") 8 8, pointer;
@@ -31,6 +37,7 @@ a:hover, button:hover {
   align-items: stretch; 
  size: 80%;
 }
+
 @media (max-width: 1200px) {
   .container-channel {
     grid-template-columns: repeat(3, 1fr);
@@ -48,7 +55,31 @@ a:hover, button:hover {
   }
 }
 
+@media (orientation: portrait) {
+ .container-channel {
+    grid-template-columns: repeat(1, 1fr);
+      gap: 1px; /* espace entre les boutons */
+    padding: 0 1px;
+     box-sizing: border-box;
+  }
+  .channel-link{
+   border: salmon 3px solid;
 
+
+  }
+  .channel-button{
+    width: 100%; /* prend toute la largeur de la colonne */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+   
+      background-size: cover;
+  background-position: center;
+  }
+}
+  
 
 
 .channel-button:hover {
@@ -57,13 +88,14 @@ a:hover, button:hover {
   filter: brightness(1.1);
   transition: filter 0.3s;
 }
+
 .channel-button {
  border: 3px solid #BBBBBB;
   border-radius: 64px;
   position: relative;
   overflow: hidden;          
   aspect-ratio: 1.5 / 0.8;
-  width: 100%;
+  width: clamp(150px, 20vw, 500px);
   display: flex;
   align-items: center;
   justify-content: center;

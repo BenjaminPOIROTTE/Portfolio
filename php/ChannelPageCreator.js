@@ -25,28 +25,54 @@ for (let i = 0; i < children.length; i++) {
 reportWindowSize();
 let splide = null;
 
+function getOrientation() {
+    return window.innerWidth > window.innerHeight ? 'horizontal' : 'vertical';
+}
 
 
 
 function reportWindowSize() {
     const width = window.innerWidth;
     const height = window.innerHeight;
-
-    switch (true) {
-     
-        case width > 1200 && height > 800:
-            CreateChannelDiv(12);
-            break;
-
     
-        case width > 800 && height > 600:
-            CreateChannelDiv(8);
-            break;
+    switch (true) {
 
-  
-        case width <= 800 || height <= 600:
-            CreateChannelDiv(4);
-            break;
+     
+    case getOrientation() === 'horizontal' && width > 1200 && height > 800:
+        CreateChannelDiv(12);
+        break;
+
+    case getOrientation() === 'horizontal' && width > 800 && height > 600:
+        CreateChannelDiv(8);
+        break;
+
+    case getOrientation() === 'horizontal' && width > 600 && height > 400:
+        CreateChannelDiv(6);
+        break;
+
+    case getOrientation() === 'horizontal' && width > 400 && height > 300:
+        CreateChannelDiv(3);
+        break;
+
+
+           // Vertical
+    case getOrientation() === 'vertical' && width > 800 && height > 1200:
+        CreateChannelDiv(12);
+        break;
+    case getOrientation() === 'vertical' && width > 600 && height > 800:
+        CreateChannelDiv(8);
+        break;
+    case getOrientation() === 'vertical' && width > 400 && height > 600:
+        CreateChannelDiv(6);
+        break;
+    case getOrientation() === 'vertical' && width > 300 && height > 400:
+        CreateChannelDiv(3);
+        break;
+
+
+    default:
+        CreateChannelDiv(1); // cas par défaut si aucun seuil n'est atteint
+        break;
     }
 
 
