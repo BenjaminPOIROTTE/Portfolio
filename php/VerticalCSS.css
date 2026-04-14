@@ -1,0 +1,95 @@
+
+
+@media (orientation: portrait) {
+
+
+
+  .musicBtn {
+    
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+
+
+
+
+    body {
+    background-size: 100vh vh;
+  }
+
+   .container-channel {
+    grid-template-columns: repeat(1, 1fr);
+      gap: 1px; 
+    padding: 0 1px;
+     box-sizing: border-box;
+  }
+  .channel-link{
+   border: salmon 3px solid;
+
+
+  }
+  .channel-button{
+    width: 100%; 
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+   
+      background-size: cover;
+  background-position: center;
+  }
+
+
+
+.center {
+  
+  position: absolute;
+  left: 50%;
+  bottom: 30%; 
+  transform: translateX(-50%);
+  text-align: center;
+}
+  .footer {
+
+  
+
+    background-image: url("../Texture/FrontMenu/barre wii.svg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+   background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 20px;
+    height: 10vh;
+
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    width: 100%;
+
+  }
+
+  .WiiBtn{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  }
+
+
+  .GithubBtn {
+    margin-right: 5%;
+
+
+
+}
+
+.ContactBtn {
+    margin-left: 3%;
+
+
+}
+
+}

@@ -6,6 +6,8 @@
 
 <head>
     <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="VerticalCSS.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
@@ -57,11 +59,34 @@
 
 
 </body>
-<?php include 'FrontMenu.php'; ?>
+
+
+<div class="footer">
+
+
+  <button class="WiiBtn ContactBtn" onclick="contactButtonClicked()"></button>
+ 
+  <button id="musicBtn" class="musicBtn"  onclick="musicButtonClicked()">
+ 
+  </button>
+  
+
+
+
+
+
+  <div class="center">
+    <div class="time" id="currentTime"></div>
+    <div class="date" id="currentDate"></div>
+  </div>
+
+  <button class="WiiBtn GithubBtn" onclick="githubButtonClicked()"></button>
+</div>
 
 </html>
 
 
 
-<script src="ChannelPageCreator.js"></script>
 
+<script src="ChannelPageCreator.js"></script>
+<script src="Util.js"></script>

@@ -2,31 +2,26 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
-
+/*Barre de background*/
 body {
-    background-image: url("../Texture/FrontMenu/barre wii.svg");
     cursor: url("../Texture/Cursor/cursorsmall.png"), auto;
-    margin: 0;
-    padding: 0;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: 100vw 20vh;
+
    
 } 
 
-@media (orientation: portrait) {
-  body {
-    background-size: 100vh vh;
-  }
-  
-}
 
+/* Curseur personnalisé */
 a, button {
   cursor: url("../Texture/Cursor/cursorsmallgrabclose.png") 8 8, pointer;
 }
 a:hover, button:hover {
   cursor: url("../Texture/Cursor/cursorsmallgrab.png") 8 8, pointer;
 }
+
+
+
+
+/* Style pour les boutons de chaîne conteneur*/
 .container-channel {
   margin-top: 15px;
   margin-left: 120px;
@@ -38,50 +33,11 @@ a:hover, button:hover {
  size: 80%;
 }
 
-@media (max-width: 1200px) {
-  .container-channel {
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  
-}
-
-@media (max-width: 900px) {
-  .container-channel {
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-}
-
-@media (orientation: portrait) {
- .container-channel {
-    grid-template-columns: repeat(1, 1fr);
-      gap: 1px; /* espace entre les boutons */
-    padding: 0 1px;
-     box-sizing: border-box;
-  }
-  .channel-link{
-   border: salmon 3px solid;
 
 
-  }
-  .channel-button{
-    width: 100%; /* prend toute la largeur de la colonne */
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-   
-      background-size: cover;
-  background-position: center;
-  }
-}
-  
 
 
+/* Style pour les boutons de chaîne */
 .channel-button:hover {
     cursor: url("../Texture/Cursor/cursorsmallgrab.png") 8 8, pointer;
 
@@ -105,7 +61,7 @@ a:hover, button:hover {
 }
 
 
-
+/* Effet de scanlines */
 
 body::after {
   content: "";
@@ -133,14 +89,14 @@ body::after {
 }
 
 
-
+/* Container invisible qui contient les boutons de chaîne de depart avant tri*/ 
 
 .invisible-container{
   display: none;
 }
 
 
-
+/* Styles pour l'écran de chaîne */
 .channel-screen {
   
     position: fixed;
@@ -158,6 +114,7 @@ body::after {
     opacity: 1;
     pointer-events: all;
 }
+
 
 .channel-inner {
     width: 100%;
@@ -189,7 +146,7 @@ body::after {
     background-color: rgb(255, 255, 255);
 
 }
-
+/*COntour ecran mais normalement ca sert plus a rien*/
 .border-img{
     position: absolute;
     top: 0;
@@ -205,7 +162,6 @@ body::after {
 
 }
 
-  
 .wii-btn {
   position: relative;
   padding: 1vh 1vw;
@@ -217,7 +173,7 @@ body::after {
  border: transparent;
   
 }
-
+/* Boutons de retour menu dans la chaine */
 .retourmenu{
     background-image: url("../Texture/FrontMenu/retourmenu.webp");
     width: 100%;
@@ -226,6 +182,7 @@ body::after {
     background-repeat: no-repeat;
     margin-left: 30%;
 }
+/* Bouton github dans la chaine */
 .githubbutton{
     background-image: url("../Texture/FrontMenu/github.webp");
     width: 100%;
@@ -253,3 +210,196 @@ body::after {
     z-index: 2000;
 
 }
+
+
+@font-face {
+  font-family: "DS-DIGI";
+  src: url("../Font/DS-DIGI.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.volume-control {
+    position: fixed;
+    left: 15vw;
+    bottom: 5vh;
+    width: 10vw;
+    height: 10vh;
+    z-index: 100;
+}
+
+
+
+
+.viewport {
+  width: 100vw;
+  height: calc(100vh - 80px); 
+  overflow: hidden;
+  position: relative;
+}
+        
+.pages {
+  display: flex;
+  width: 200vw;
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
+
+.page {
+  width: 100vw;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.footer {
+
+
+    background-image: url("../Texture/FrontMenu/barre wii.svg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100% auto; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 20px;
+    height: 50vh;
+
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    width: 100%;
+
+
+
+}
+    
+.center {
+  position: fixed;
+  left: 50%;
+  bottom: 0; 
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+
+ .time {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.WiiBtn {
+
+  width: clamp(50px, 10vw, 1000px);
+  aspect-ratio: 1 / 1;
+  align-self: flex-end;
+ margin-bottom: 5px;
+  border-radius: 50%;
+ 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 999999;
+}
+
+.WiiBtn:active {
+  transform: scale(0.95);
+}
+
+.WiiBtn:not(:active) {
+  animation: bounce 0.4s ease;
+}
+
+/* Keyframes */
+@keyframes bounce {
+  0% {
+    transform: scale(0.7);
+
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Boutons de contact et github menu principal */
+.GithubBtn {
+    margin-right: 3%;
+
+    background-image: url("../Texture/FrontMenu/githubround.webp");
+    z-index: 20;
+
+}
+
+.ContactBtn {
+    margin-left: 3%;
+
+    background-image: url("../Texture/FrontMenu/ContactRound.webp");
+     z-index: 20;
+
+}
+
+/* Style pour l'heure et la date dans le menu principal */
+.time {
+     margin-bottom: 1%;
+
+  font-size: 6vw;
+  color: #9b9b9b;
+  font-family: "DS-DIGI", sans-serif;
+}
+
+
+.date {
+  
+   margin-bottom: 1vw;
+  font-size: 6vw;
+  color: #7B7B7D;
+  font-family: "DS-DIGI", sans-serif;
+}
+
+
+.channel-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.10) 0px,
+    rgba(0, 0, 0, 0.10) 1px,
+    rgba(255, 255, 255, 0.03) 2px,
+    rgba(255, 255, 255, 0.03) 4px
+  );
+
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+}
+
+
+/*bouton note de musique dans la chaine*/
+.musicBtn{
+  margin-right: 60%;
+  align-self: flex-end;
+ margin-bottom: 15px;
+  width: clamp(20px, 5vw, 1000px);
+  aspect-ratio: 1 / 1;
+  background-image: url("../Texture/FrontMenu/volume_off_100dp_79797B_FILL0_wght400_GRAD0_opsz48.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+}
+
+

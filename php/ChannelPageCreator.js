@@ -56,18 +56,10 @@ function reportWindowSize() {
 
 
            // Vertical
-    case getOrientation() === 'vertical' && width > 800 && height > 1200:
-        CreateChannelDiv(12);
-        break;
-    case getOrientation() === 'vertical' && width > 600 && height > 800:
-        CreateChannelDiv(8);
-        break;
-    case getOrientation() === 'vertical' && width > 400 && height > 600:
-        CreateChannelDiv(6);
-        break;
-    case getOrientation() === 'vertical' && width > 300 && height > 400:
+    case getOrientation() === 'vertical':
         CreateChannelDiv(3);
         break;
+
 
 
     default:
@@ -215,14 +207,14 @@ function CreateButton(ContainerName ,ArrayChilds)
 }
 
 
-// Example usage:
+
 
 
 
 function openChannel(url) {
     const screen = document.getElementById("channel-screen");
     const frame = document.getElementById("channel-frame");
-    channelClicked();
+    
     frame.src = url;
     screen.classList.add("active");
 }
