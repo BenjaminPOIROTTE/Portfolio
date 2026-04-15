@@ -25,7 +25,7 @@
      box-sizing: border-box;
   }
   .channel-link{
-   border: salmon 3px solid;
+
 
 
   }
@@ -91,5 +91,32 @@
 
 
 }
+
+
+
+
+
+
+
+/* Styles pour la page de la chaine en orientation verticale */
+.githubbutton{
+  width: 90%;
+  aspect-ratio: 1 / 1;
+}
+.retourmenu{
+   
+
+  width: 90%;
+  aspect-ratio: 1 / 1;
+}
+
+
+
+
+
+/* Styles for vertical orientation Channel Page*/
+
+
+
 
 }

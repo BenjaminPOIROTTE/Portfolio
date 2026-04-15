@@ -23,14 +23,24 @@ a:hover, button:hover {
 
 /* Style pour les boutons de chaîne conteneur*/
 .container-channel {
+
   margin-top: 15px;
-  margin-left: 120px;
-  margin-right: 120px;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: auto;
+
+  width: 100%;
+
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  align-items: stretch; 
- size: 80%;
+  align-items: stretch;
+
+  box-sizing: border-box;
+
+  z-index: 9999999;
 }
 
 
@@ -51,7 +61,7 @@ a:hover, button:hover {
   position: relative;
   overflow: hidden;          
   aspect-ratio: 1.5 / 0.8;
-  width: clamp(150px, 20vw, 500px);
+  width: clamp(50px, 20vw, 3000px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,12 +146,15 @@ body::after {
 
 
 }
-
+/*Bouton dans le viewer de channel en bas*/
 .channel-buttons {
+
     height: 20% ;
     display: flex;
     justify-content: center;
-    gap: 20px;
+      align-items: center;
+
+
     padding: 10px;
     background-color: rgb(255, 255, 255);
 
@@ -163,33 +176,26 @@ body::after {
 }
 
 .wii-btn {
-  position: relative;
-  padding: 1vh 1vw;
-
-  cursor: pointer;
-  overflow: hidden;
-  background-color: transparent;
-
- border: transparent;
+    width: clamp(80px,20vw, 1500px);
+    height: clamp(80px, 20vw, 1500px);
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
   
 }
 /* Boutons de retour menu dans la chaine */
 .retourmenu{
     background-image: url("../Texture/FrontMenu/retourmenu.webp");
-    width: 100%;
-    height: 100%; 
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-left: 30%;
+
+    
 }
 /* Bouton github dans la chaine */
 .githubbutton{
     background-image: url("../Texture/FrontMenu/github.webp");
-    width: 100%;
-    height: 100%; 
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 30%;
+
 }
 
 .overlay {
@@ -274,10 +280,12 @@ body::after {
     left: 0; 
     width: 100%;
 
-
+    pointer-events: none;
 
 }
-    
+.footer button {
+    pointer-events: auto;
+}
 .center {
   position: fixed;
   left: 50%;

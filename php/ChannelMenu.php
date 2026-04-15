@@ -1,8 +1,6 @@
 <?php
 
-
-   $path = "channels";
-
+$path = "channels";
 $folders = scandir($path);
 
 foreach ($folders as $folder) {
@@ -16,7 +14,7 @@ foreach ($folders as $folder) {
 
     if (is_dir($folderPath)) {
 
-       if (file_exists($gifPath)) {
+        if (file_exists($gifPath)) {
             $background = $gifPath;
         } elseif (file_exists($jpgPath)) {
             $background = $jpgPath;
@@ -24,12 +22,18 @@ foreach ($folders as $folder) {
             $background = "Texture/WiiNoIcon.png";
         }
 
-        echo "
-        <a href='ChannelView.php?selectedchannel=$folder' id='$folder' class='channel-link'>
-            <div class='channel-button' style=\"background-image: url('$background');\" '>
-            </div>
-        </a>";
+      
+        if ($background === "Texture/WiiNoIcon.png") {
+            echo "
+            <div class='channel-button' style=\"background-image: url('$background');\">
+            </div>";
+        } else {
+            echo "
+            <a href='ChannelView.php?selectedchannel=$folder' id='$folder' class='channel-link'>
+                <div class='channel-button' style=\"background-image: url('$background');\">
+                </div>
+            </a>";
+        }
     }
 }
-
 ?>

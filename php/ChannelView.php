@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Channel View</title>
     <link rel="stylesheet" href="ChannelView.css">
+    <link rel="stylesheet" href="VerticalCSS.css">
 
 </head>
 
@@ -28,7 +29,7 @@ if (file_exists($gifPath)) {
     $imagePath = "default.jpg";
 }
 
-echo "<img src='$imagePath' alt='Channel Image' id='channelImage' class='channelImage'>";
+echo "<div class='backgroundImage' style='background-image: url($imagePath)'></div>";
 
 ?>
 </div>

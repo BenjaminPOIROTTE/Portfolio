@@ -38,29 +38,28 @@ function reportWindowSize() {
     switch (true) {
 
      
-    case getOrientation() === 'horizontal' && width > 1200 && height > 800:
+
+    case getOrientation() === 'horizontal' && width > 800 && height > 600:
         CreateChannelDiv(12);
         break;
 
-    case getOrientation() === 'horizontal' && width > 800 && height > 600:
+    case getOrientation() === 'horizontal' && width > 600 && height > 400:
         CreateChannelDiv(8);
         break;
 
-    case getOrientation() === 'horizontal' && width > 600 && height > 400:
-        CreateChannelDiv(6);
-        break;
-
     case getOrientation() === 'horizontal' && width > 400 && height > 300:
-        CreateChannelDiv(3);
+        CreateChannelDiv(6);
         break;
 
 
            // Vertical
-    case getOrientation() === 'vertical':
+    case getOrientation() === 'vertical' && height > 1000:
         CreateChannelDiv(3);
         break;
 
-
+    case getOrientation() === 'vertical' && height < 1000:
+        CreateChannelDiv(2);
+        break;
 
     default:
         CreateChannelDiv(1); // cas par défaut si aucun seuil n'est atteint
@@ -128,9 +127,9 @@ function CreateChannelDiv(NumberTile)
 
     if(ArrayChilds.length > 0) {
         let emptyTile = document.createElement("a");
-        emptyTile.className = "channel-link";
+        emptyTile.className = "channel-link disabled";
         emptyTile.id = "emptyTile";
-       
+        emptyTile.removeAttribute("href");
         let emptyDiv = document.createElement("div");
         emptyDiv.className = "channel-button";
         emptyDiv.style.backgroundImage = "url('../Texture/WiiNoIcon.png')";
@@ -171,7 +170,10 @@ function CreateSlide(ArrayChilds)
    
 
 ArrayChilds.forEach(element => {
-
+  if (element.classList.contains("disabled")) {
+        ChannelDiv.appendChild(element);
+        return;
+    }
     element.addEventListener("click", function(e) {
         e.preventDefault();
         openChannel(this.getAttribute("href"));

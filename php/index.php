@@ -80,7 +80,7 @@
     <div class="date" id="currentDate"></div>
   </div>
 
-  <button class="WiiBtn GithubBtn" onclick="githubButtonClicked()"></button>
+  <button class="WiiBtn GithubBtn" onclick="githubButtonClicked(); RedirectGithub()"></button>
 </div>
 
 </html>
@@ -90,3 +90,6 @@
 
 <script src="ChannelPageCreator.js"></script>
 <script src="Util.js"></script>
+<script src="sound.js"></script>
+
+

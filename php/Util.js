@@ -9,3 +9,8 @@
         updateTime();
         setInterval(updateTime, 1000);
         
+function RedirectGithub()
+{
+    
+    open('https://github.com/BenjaminPOIROTTE');
+}
