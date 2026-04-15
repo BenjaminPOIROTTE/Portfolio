@@ -14,3 +14,9 @@ function RedirectGithub()
     
     open('https://github.com/BenjaminPOIROTTE');
 }
+
+function RedirectContact()
+{
+    
+    open('contact.php');
+}

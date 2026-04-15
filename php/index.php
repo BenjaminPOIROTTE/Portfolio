@@ -64,7 +64,7 @@
 <div class="footer">
 
 
-  <button class="WiiBtn ContactBtn" onclick="contactButtonClicked()"></button>
+  <button class="WiiBtn ContactBtn" onclick="contactButtonClicked(); RedirectContact()"></button>
  
   <button id="musicBtn" class="musicBtn"  onclick="musicButtonClicked()">
  
