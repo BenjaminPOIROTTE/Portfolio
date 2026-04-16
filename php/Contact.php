@@ -8,20 +8,26 @@
 </head>
 
 <body>
-
+<div class="header">ME CONTACTER</div>
+<div class="middle">
 <div class="card">
-  <h2>Contact</h2>
+
 
  <form action="Email/SendMail.php" method="POST"  id="contactForm">
   <input type="text" name="name" placeholder="Nom" required>
   <input type="email" name="email" placeholder="Email" required>
-  <textarea name="message" placeholder="Message" required></textarea>
+  <textarea name="message" maxlength="1500" placeholder="Message" required></textarea>
   <button type="submit" id="submitBtn">Envoyer</button>
 </form>
 
   <div class="msg" id="msg"></div>
 </div>
+</div>
+<div class="footer">
 
+<button name="RetourBtn" id="RetourBtn" onclick="RetourClick()">RETOUR</button>
+
+</div>
 <input type="text" name="website" style="display:none">
 
 </body>

@@ -9,15 +9,15 @@
 </head>
 <body>
     <div class="container">
-    <div class="caution">⚠️ ATTENTION-SANTE ET SECURITE</h1>
+    <div class="caution">⚠️ MODE EXPLORATION</h1>
 
-    <div class="text-caution">AVANT DE JOUER, LISEZ LE MODE D'EMPLOI DE <br> VOTRE CONSOLE DE JEU POUR DES INFORMATIONS <br> IMPORTANTS SUR VOTRE SANTE ET SECURITE.</h2>
+    <div class="text-caution">BIENVENUE SUR MON PORTFOLIO<br>POUR UNE MEILLEURE EXPÉRIENCE<br>UTILISEZ UN ORDINATEUR</h2>
 
-    <div class="text-egalement">Egalement en ligne :</h2>
-    <div class="text-url">https://www.example.com</h2>
+    <div class="text-egalement">Bonne visite</h2>
+    <div class="text-url">Benjamin Poirotte</h2>
 
 
-    <div class="press-a" id="press-a">Appuyez sur A pour continuer.</h2>
+    <div class="press-a" id="press-a">Appuyez sur la page pour continuer.</h2>
     </div>
 </body>
 <script>

@@ -30,3 +30,9 @@ form.addEventListener("submit", async (e) => {
     btn.disabled = false;
     btn.innerText = "Envoyer";
 });
+
+
+
+function RetourClick() {
+    window.location.href = "index.php";
+}

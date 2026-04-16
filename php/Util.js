@@ -18,5 +18,5 @@ function RedirectGithub()
 function RedirectContact()
 {
     
-    open('contact.php');
+    open('Contact.php');
 }
