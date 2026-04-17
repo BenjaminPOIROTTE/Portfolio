@@ -41,9 +41,10 @@
  
         <iframe id="channel-frame"></iframe>
             <div class="channel-buttons">
-                <button  class="wii-btn retourmenu " onclick="closeChannel()" id="close-channel"></button>
-                <button class="wii-btn githubbutton" onclick="githubButtonClicked()" id="github-btn"></button>
-               
+                <button  class="wii-btn  " onclick="closeChannel()" id="close-channel">RETOUR</button>
+                <button class="wii-btn " onclick="githubButtonClicked()" id="github-btn">GITHUB</button>
+                <button class="wii-btn "  id="access-btn">ACCEDER</button>
+
             </div>
 
             <div class="overlay"></div>

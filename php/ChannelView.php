@@ -20,7 +20,7 @@ $gifPath = 'channels/' . $selectedChannel . "/miniature.gif";
 $jpgPath = 'channels/' . $selectedChannel . "/miniature.jpg";
 
 $textPath = 'channels/' . $selectedChannel . "/description.txt";
-
+$config = 'channels/' . $selectedChannel . "/config.json";
 if (file_exists($gifPath)) {
     $imagePath = $gifPath;
 } elseif (file_exists($jpgPath)) {
@@ -61,8 +61,6 @@ $backgroundColor = "#ffffff";
         echo "Description non disponible.";
     }
 
-    
-
 
 
 ?>
@@ -71,19 +69,31 @@ $backgroundColor = "#ffffff";
     </p>
 </div>
 
+//Envoie des données de config au parent pour les boutons d'accès et github
+<?php
+$configPath = 'channels/' . $selectedChannel . "/config.json";
 
+$configData = [];
+
+if (file_exists($configPath)) {
+    $configData = json_decode(file_get_contents($configPath), true);
+}
+?>
 
 <script>
-
+  const config = <?php echo json_encode($configData); ?>;
 
   const urlParams = new URLSearchParams(window.location.search);
   const SelectedValue = urlParams.get('selectedchannel');
 
-
-
-
+  window.parent.postMessage({
+    type: "auth",
+    access: config.data.access,
+    github: config.data.github,
+    githubURL: config.data.githubURL,
+    accessURL: config.data.accessURL
+  }, "*");
 </script>
-
 
 <body>
     

@@ -1,0 +1,9 @@
+{
+  "type": "config",
+  "data": {
+    "access": false,
+    "accessURL": "https://google.fr",
+    "github": true,
+    "githubURL": "https://github.com"
+  }
+}

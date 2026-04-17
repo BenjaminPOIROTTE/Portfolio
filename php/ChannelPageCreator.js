@@ -83,7 +83,7 @@ function initSplide() {
     splide = new Splide('#image-carousel', {
         type: 'slide',
         perPage: 1,
-        pagination: true,
+        pagination: false,
         arrows: true,
     });
 
